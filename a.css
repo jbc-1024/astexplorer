@@ -5,9 +5,6 @@ body {
 li {
     list-style-type: none;
 }
-/* 下面这个是用来让字典中的 Node 不显示 + - 符号 */
-/* Node 单独出现的时候，要在左边显示红 - 绿 + */
-/* 但是作为字典的 value 时，不应该显示 + - 符号 */
 .dict-element > span > .type-entry::before {
     display: none;
 }
@@ -17,7 +14,6 @@ li {
 .type-entry {
     cursor: pointer;
     position: relative;
-    /* 外观 */
     color: #268BD2;
 }
 .type-entry::before {
@@ -61,7 +57,6 @@ li {
     }
 }
 .node {
-    /* 随便试，发现这个 display 效果最好，具体原理不懂 */
     display: inline;
 }
 .string {
@@ -118,9 +113,6 @@ li {
 #langlist > .active-lang:hover {
     background: #c9caca;
 }
-/* 这段代码是个套路 */
-/* 只要 langlist 是被 hover */
-/* 无论是 hover 到哪个子元素，整个 langlist 都要完整显示 */
 #langlist:hover > .langs {
     display: block;
 }
@@ -149,8 +141,6 @@ li {
 .lang:hover {
     background: #c9caca;
 }
-
-/* header 以下的内容部分 */
 #container {
     display: flex;
     flex: 1;
@@ -159,27 +149,22 @@ li {
     height: 90vh;
     width: 95vw;
 }
-/* 左半边的编辑器容器 */
 #editor {
     width: 45%;
     height: 100%;
 }
-/* 真正的编辑器，宽高需要明确 */
 #editor > .CodeMirror {
     width: 100%;
     height: 100%;
 }
-/* 位于中间分隔线 */
 #split {
     width: 0.3rem;
     background: #cfcfcf;
 }
-/* 右半边的输出容器 */
 #output {
     width: 55%;
     height: 100%;
 }
-/* 容器最上方的按钮条，用来切换 ast / json 的 */
 #toolbar {
     font-size: 14px;
     margin-left: -1px;
@@ -200,7 +185,6 @@ li {
     background-color: #999;
     color: #f5f5f5;
 }
-/* 容器下方展示区域 */
 #display {
     width: 100%;
     height: calc(100% - 2rem);
@@ -224,7 +208,6 @@ li {
     background: #efefef;
     user-select: none;
 }
-/* 编辑器里面产生高亮 */
 .mark {
     background-color: #ff7;
 }
