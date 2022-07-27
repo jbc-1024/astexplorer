@@ -1,0 +1,233 @@
+body {
+    font-family: monospace;
+    font-size: 16px;
+}
+li {
+    list-style-type: none;
+}
+/* 下面这个是用来让字典中的 Node 不显示 + - 符号 */
+/* Node 单独出现的时候，要在左边显示红 - 绿 + */
+/* 但是作为字典的 value 时，不应该显示 + - 符号 */
+.dict-element > span > .type-entry::before {
+    display: none;
+}
+.underline:hover {
+    text-decoration: underline;
+}
+.type-entry {
+    cursor: pointer;
+    position: relative;
+    /* 外观 */
+    color: #268BD2;
+}
+.type-entry::before {
+    color: green;
+    content: '+';
+    position: absolute;
+    left: -15px;
+}
+.dict-key {
+    color: #B58900;
+}
+.key-entry {
+    cursor: pointer;
+    position: relative;
+}
+.key-entry::before {
+    color: green;
+    content: '+';
+    position: absolute;
+    left: -15px;
+}
+.open::before {
+    color: red;
+    content: '-';
+}
+.highlight {
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: Gradient 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2;
+}
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+.node {
+    /* 随便试，发现这个 display 效果最好，具体原理不懂 */
+    display: inline;
+}
+.string {
+    color: #2AA198;
+    cursor: text;
+}
+.number {
+    color: rgb(42, 161, 152);
+    cursor: text;
+}
+.bool {
+    color: rgb(42, 161, 152);
+    cursor: text;
+}
+.general {
+    color: rgb(147, 161, 161);
+    font-size: 15px;
+    font-style: italic;
+}
+.p {
+    color: rgb(147, 161, 161);
+    font-size: 15px;
+}
+/* 顶部 header */
+#header {
+    width: 95vw;
+    border-bottom: 1px rgb(165, 165, 165) solid;
+    background: #efefef;
+    display: flex;
+}
+#header > * {
+    border-right: 1px rgb(165, 165, 165) solid;
+}
+#title {
+    display: inline-block;
+    /* 字体 */
+    font-weight: bold;
+    font-size: 1.4rem;
+    width: 14rem;
+    text-align: center;
+}
+#title > span {
+    position: relative;
+    top: 5px;
+}
+#langlist {
+    display: inline-block;
+    font-size: 1.25rem;
+}
+#langlist > .active-lang {
+    cursor: default;
+    background-color: #efefef;
+}
+#langlist > .active-lang:hover {
+    background: #c9caca;
+}
+/* 这段代码是个套路 */
+/* 只要 langlist 是被 hover */
+/* 无论是 hover 到哪个子元素，整个 langlist 都要完整显示 */
+#langlist:hover > .langs {
+    display: block;
+}
+#langlist > .langs {
+    /*  */
+    display: none;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 500;
+    cursor: default;
+}
+.lang {
+    width: 10rem;
+    height: 2.4rem;
+    border-bottom: 1px solid #c9caca;
+    background-color: #efefef;
+    cursor: pointer;
+}
+.lang > span {
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+.lang:hover {
+    background: #c9caca;
+}
+
+/* header 以下的内容部分 */
+#container {
+    display: flex;
+    flex: 1;
+    border-bottom: #c9caca 3px solid;
+    border-left: #ddd 1px solid;
+    height: 90vh;
+    width: 95vw;
+}
+/* 左半边的编辑器容器 */
+#editor {
+    width: 45%;
+    height: 100%;
+}
+/* 真正的编辑器，宽高需要明确 */
+#editor > .CodeMirror {
+    width: 100%;
+    height: 100%;
+}
+/* 位于中间分隔线 */
+#split {
+    width: 0.3rem;
+    background: #cfcfcf;
+}
+/* 右半边的输出容器 */
+#output {
+    width: 55%;
+    height: 100%;
+}
+/* 容器最上方的按钮条，用来切换 ast / json 的 */
+#toolbar {
+    font-size: 14px;
+    margin-left: -1px;
+    border-bottom: 1px solid #ddd;
+    background-color: #efefef;
+    display: flex;
+    height: 2rem;
+}
+#toolbar > button {
+    font: inherit;
+    border-color: #f5f5f5;
+    background-color: #ddd;
+    color: #444;
+    cursor: pointer;
+    width: 6rem;
+}
+#toolbar > button.active {
+    background-color: #999;
+    color: #f5f5f5;
+}
+/* 容器下方展示区域 */
+#display {
+    width: 100%;
+    height: calc(100% - 2rem);
+}
+#json {
+    width: 100%;
+    height: 100%;
+}
+#json > .CodeMirror {
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    font-size: 0.8rem;
+}
+#tree {
+    width: calc(100% - 30px);
+    height: calc(100% - 10px);
+    overflow: scroll;
+    padding-left: 30px;
+    padding-top: 10px;
+    background: #efefef;
+    user-select: none;
+}
+/* 编辑器里面产生高亮 */
+.mark {
+    background-color: #ff7;
+}
+h1 {
+    font-size: 40px;
+}

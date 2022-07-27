@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="a.css"/>
+    </head>
+    <body>
+        <div id="header">
+            <div id="title">
+                <span>AST EXPLORER</span>
+            </div>
+            <div id="langlist">
+            </div>    
+        </div>
+        <div id="container">
+            <div id="editor">
+            </div>
+            <div id="split">
+            </div>
+            <div id="output">
+                <div id="toolbar">
+                    <button data-mode="tree" class="active">Tree</button>
+                    <button data-mode="json">JSON</button>
+                </div>
+                <div id="display"">
+                    <div id="tree"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- 工具函数 -->
+    <script src="util-27f341db03.js"></script>
+
+    <!-- (被魔改过)三方库，编辑器 -->
+    <link rel="stylesheet" href="lib/cm/codemirror.css"/>
+    <script src="lib/cm/codemirror-665174d8d0.js"></script>  
+    <!-- 给编辑器支持多种语言高亮 -->
+    <script src="lib/cm/mode_xml-7c9ff9dbeb.js"></script>      
+    <script src="lib/cm/mode_css-f0b13493dd.js"></script>    
+    <script src="lib/cm/mode_js-43a2a7a500.js"></script>    
+    <script src="lib/cm/mode_jsx-d96e6614bb.js"></script>    
+    <!-- 给编辑器支持代码折叠 -->
+    <link rel="stylesheet" href="lib/cm/fold_gutter.css"/>
+    <script src="lib/cm/fold_code-53f98ace73.js"></script>
+    <script src="lib/cm/fold_gutter-a75a10fae9.js"></script>
+    <script src="lib/cm/brace_fold-768f239c52.js"></script>
+    <script src="lib/cm/comment_fold-96b1338fde.js"></script>
+
+    <!-- (被魔改过)三方库，csstree -->
+    <script src="lib/csstree/csstree-08a36f08e3.js"></script>
+
+    <!-- (被魔改过)三方库，babel parser -->
+    <script src="lib/babeltree/babeltree-514c243c38.js"></script>
+
+    <!-- (被魔改过)三方库，acorn parser -->
+    <script src="lib/jsxtree/jsxtree-5636dcb95e.js"></script>
+
+    <!-- (被魔改过)三方库，himalaya parser -->
+    <script src="lib/htmltree/htmltree-c7fc1a7053.js"></script>
+
+    <!-- 编辑器初始化 -->
+    <script src="editor-114c35c211.js"></script>
+
+    <!-- langlist 元素初始化 -->
+    <script src="langlist-b54281b6dd.js"></script>
+
+    <!-- display - tree 模板 -->
+    <script src="tree-f5b3973264.js"></script>
+
+    <!-- main -->
+    <script src="main-c438ed75a6.js"></script>
+</html>
