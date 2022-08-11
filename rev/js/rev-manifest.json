@@ -1,8 +1,8 @@
 {
-  "action.js": "action-f46e4a144c.js",
+  "action.js": "action-43d1a6a1b5.js",
   "editor.js": "editor-50045dca5d.js",
   "langlist.js": "langlist-d817e877d0.js",
-  "lib/babeltree/babeltree.js": "lib/babeltree/babeltree-254dface2c.js",
+  "lib/babeltree/babeltree.js": "lib/babeltree/babeltree-af8afa3687.js",
   "lib/cm/brace_fold.js": "lib/cm/brace_fold-6579a56b81.js",
   "lib/cm/codemirror.js": "lib/cm/codemirror-c11c66bd94.js",
   "lib/cm/comment_fold.js": "lib/cm/comment_fold-7bcc0ed987.js",
@@ -15,8 +15,10 @@
   "lib/csstree/csstree.js": "lib/csstree/csstree-452dec81cd.js",
   "lib/htmltree/htmltree.js": "lib/htmltree/htmltree-a18878c90b.js",
   "lib/jsxtree/jsxtree.js": "lib/jsxtree/jsxtree-8e758e413d.js",
+  "lib/lexer/lexer.js": "lib/lexer/lexer-04a4ea8d0f.js",
   "main.js": "main-9235ed22cb.js",
-  "refresh.js": "refresh-d23f707fed.js",
+  "refresh.js": "refresh-681409407e.js",
+  "tokens.js": "tokens-25d8de5820.js",
   "tree.js": "tree-f24e339f21.js",
   "util.js": "util-d09617b7a2.js"
 }
