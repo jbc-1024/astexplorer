@@ -19,19 +19,22 @@ li {
 
 
 
-.dict-element > span > .type-entry::before {
+.dict-element > span > .open-entry::before {
     display: none;
 }
-.underline:hover {
-    text-decoration: underline;
-}
-.type-entry {
+
+.open-entry {
     cursor: pointer;
     position: relative;
     
     color: #268BD2;
 }
-.type-entry::before {
+
+.open-entry:hover {
+    text-decoration: underline;
+}
+
+.open-entry::before {
     color: green;
     content: '+';
     position: absolute;
@@ -40,16 +43,7 @@ li {
 .dict-key {
     color: #B58900;
 }
-.key-entry {
-    cursor: pointer;
-    position: relative;
-}
-.key-entry::before {
-    color: green;
-    content: '+';
-    position: absolute;
-    left: -15px;
-}
+
 .open::before {
     color: red;
     content: '-';
@@ -58,7 +52,7 @@ li {
     display: none;
 }
 .highlight {
-    color: #fff;
+    
     background: linear-gradient(-45deg, #f5e944, #F5EE93);
     background-size: 400% 400%;
     animation: Gradient 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2;

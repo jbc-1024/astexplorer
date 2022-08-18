@@ -1,1 +1,0 @@
-"use strict";var _globalAst={},globalAstSet=function(t){_globalAst=t},globalAstGet=function(){return _globalAst},__init=function(){setupLangList(),setupEditor()},__bindEvents=function(){bindEventToggle(),bindEventHover(),bindEventSwitchLang(),bindEventSwitchMode(),preventDefaultSave()},__main=function(){__init(),__bindEvents()};__main();
